@@ -1,0 +1,105 @@
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background: linear-gradient(45deg, #f8f9fa, #f8f9fa); Gradient Background */
+    background-color: #f39c12;
+    color: white;
+    padding: 50px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .about-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+  }
+  
+  .about-content {
+    max-width: 800px;
+    margin: 30px 0;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.4); /* Slightly darkened background */
+    border-radius: 8px;
+  }
+  
+  .about-icon {
+    margin: 20px;
+    font-size: 100px;
+    color: #fff;
+    margin-bottom: 25px;
+  }
+  
+  .about-description {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .about-quote {
+    font-size: 23px;
+    font-style: italic;
+    color: #f2f2f2;
+    margin-top: 15px;
+  }
+  
+  .about-skills {
+    margin-top: 40px;
+    color: black;
+  }
+  
+  .about-skills h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    text-transform: none;
+    margin-bottom: 20px;
+  }
+  
+  .about-skills ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .about-skills ul li {
+    margin: 10px 15px;
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+  }
+  
+  .about-skills ul li i {
+    margin-right: 10px;
+    font-size: 28px;
+    color: black;
+  }
+  
+  @media (max-width: 768px) {
+    .about-title {
+      font-size: 30px;
+    }
+  
+    .about-content {
+      padding: 15px;
+    }
+  
+    .about-icon {
+      font-size: 80px;
+    }
+  
+    .about-description {
+      font-size: 16px;
+    }
+  }
+  

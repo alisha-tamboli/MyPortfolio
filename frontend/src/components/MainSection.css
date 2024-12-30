@@ -1,0 +1,99 @@
+/* Main Section */
+.main-section {
+  display: flex;
+  flex-direction: row; /* Aligns content side by side */
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  background-color: #f5f5f5;
+  gap: 30px; /* Adds spacing between text and image */
+}
+
+.text-container {
+  max-width: 600px;
+  flex: 1; /* Allow the text container to take up remaining space */
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.highlight {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.about-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #f39c12;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.about-btn:hover {
+  background-color: #c27b08; /* Darker hover effect */
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  font-size: 1.5rem;
+  color: #333;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #f39c12;
+}
+
+.avatar-container {
+  flex: 0 0 auto; /* Prevents avatar from stretching */
+  display: flex;
+  justify-content: center; /* Centers the image within its container */
+  align-items: center;
+}
+
+.avatar {
+  width: 285px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+  height: 300px;
+  /* padding-bottom: 18.5px; */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-section {
+    flex-direction: column; /* Stacks text and image vertically */
+    text-align: center; /* Centers text for smaller screens */
+    padding: 30px; /* Adjust padding for smaller screens */
+  }
+
+  .text-container {
+    margin-bottom: 20px; /* Adds spacing below text content */
+  }
+
+  .avatar-container {
+    display: flex;
+    justify-content: center; /* Keeps avatar centered on small screens */
+  }
+
+  .avatar {
+    width: 200px; /* Scales down avatar size on smaller screens */
+  }
+}

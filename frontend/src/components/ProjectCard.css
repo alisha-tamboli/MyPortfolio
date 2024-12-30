@@ -1,0 +1,152 @@
+/* Project Card Container */
+.project-card-container {
+    display: flex;
+    gap: 20px; /* Space between cards */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent cards from wrapping to the next line */
+    padding: 10px; /* Add padding for better scrolling experience */
+    scroll-snap-type: x mandatory; /* Ensures cards snap into view */
+  }
+  
+  .project-card-container::-webkit-scrollbar {
+    display: none; /* Hides the scrollbar for a cleaner look */
+  }
+  
+  /* Individual Project Card */
+  .project-card {
+    flex: 0 0 90%; /* Each card takes up 90% of the viewport width */
+    max-width: 400px; /* Restricts the card width for larger devices */
+    height: 400px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: start; /* Makes each card snap into place */
+  }
+  
+  /* Card Image */
+  .project-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  /* Card Content */
+  .project-card-content {
+    padding: 15px;
+    text-align: left;
+  }
+  
+  .project-card-content h5 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .project-card-content p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .project-card-content a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #f39c12;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .project-card-content a:hover {
+    background-color: #c27b08;
+    color: white;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .project-card-container {
+      padding: 0 10px; /* Reduce padding for smaller screens */
+    }
+  
+    .project-card {
+      flex: 0 0 80%; /* Cards take up 80% of the screen width on tablets */
+      max-width: 350px; /* Adjust max-width for smaller devices */
+      height: 500px; /* Adjust height for smaller screens */
+    }  
+}
+
+  @media (max-width: 768px) {
+    .project-card-container {
+      padding: 0 10px; /* Reduce padding for smaller screens */
+    }
+  
+    .project-card {
+      flex: 0 0 100%; /* Each card takes up the full width of the viewport */
+      max-width: 100%; /* Allow card to fill the full width */
+      height: 690px; /* Adjust height for mobile screens */
+    }
+  }
+
+  
+  @media (max-width: 768px) {
+    .project-card-container {
+      padding: 0 10px; /* Reduce padding for smaller screens */
+    }
+  
+    .project-card {
+      flex: 0 0 100%; /* Each card takes up the full width of the viewport */
+      max-width: 100%; /* Allow card to fill the full width */
+      height: 690px; /* Adjust height for mobile screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .project-card-content h5 {
+      font-size: 16px; /* Smaller heading on very small screens */
+    }
+  
+    .project-card-content p {
+      font-size: 12px; /* Smaller paragraph text */
+    }
+  
+    .project-card-content a {
+      padding: 8px 16px; /* Adjust button padding for small screens */
+      font-size: 12px; /* Smaller button text */
+    }
+  }
+  
+  @media (max-width: 360px) {
+    .project-card-container {
+      padding: 0 5px; /* Reduce padding further for very small screens */
+    }
+  
+    .project-card {
+      flex: 0 0 100%; /* Ensure cards take up the full width of the viewport */
+      max-width: 100%; /* Allow card to fill the full width */
+      height: 550px; /* Adjust height for very small screens */
+    }
+  
+    .project-card-content h5 {
+      font-size: 14px; /* Smaller heading on very small screens */
+      margin-bottom: 6px; /* Reduced margin for better space efficiency */
+    }
+  
+    .project-card-content p {
+      font-size: 12px; /* Smaller paragraph text for better fitting */
+      margin-bottom: 6px; /* Reduced margin for tighter spacing */
+    }
+  
+    .project-card-content a {
+      padding: 3px 10px; /* Adjust button padding for very small screens */
+      font-size: 12px; /* Smaller button text for better fitting */
+    }
+  }
+  

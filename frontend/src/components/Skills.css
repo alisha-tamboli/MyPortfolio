@@ -1,0 +1,45 @@
+.skills-container {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    font-size: 1.9rem;
+  }
+  
+  .skills-container h2 {
+    font-weight: bold;
+  }
+  
+  .skills-container p {
+    color: #6c757d;
+  }
+  
+  .technical-skills h3,
+  .soft-skills h3 {
+    margin-bottom: 15px;
+  }
+  
+  .skills-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .skills-list li {
+    padding: 5px 0;
+    font-size: 21.5px;
+  }
+
+  
+  .technical-skills .row > div {
+    padding: 10px;
+  }
+  
+  .technical-skills h5 {
+    font-size: 21.5px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .soft-skills {
+    margin-top: 20px;
+  }
+  

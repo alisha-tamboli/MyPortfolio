@@ -1,0 +1,72 @@
+/* Base Navbar Styling */
+html {
+  scroll-behavior: smooth;
+}
+.navbar {
+    background-color: #ffffff; /* Light background to contrast with the main section */
+    color: #333333; /* Dark text for readability */
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* Logo Section */
+  .navbar-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333;
+    text-decoration: none;
+  }
+  
+  .navbar-logo:hover {
+    color: #ff5722; /* Highlight effect for logo */
+  }
+  
+  /* Navbar Links */
+  .navbar-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navbar-links a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #333333;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-links Link:hover {
+   /* color: #ff5722; Add a vibrant hover effect */
+    color: #ff5722;
+  }
+  
+  /* Active Link Styling */
+  .navbar-links .active {
+    color: #ff5722;
+    font-weight: bold;
+  }
+  
+  .navbar-links a, .navbar-links .active {
+    cursor: pointer; /* Makes the links appear clickable */
+  }
+
+  
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .navbar-links {
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+  }
+  
