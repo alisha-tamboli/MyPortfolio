@@ -14,7 +14,7 @@ const projects = [
       description: "Created and successfully deployed a portfolio website on Heroku using the MERN stack to showcase projects and skills. The site features interactive elements, smooth navigation, and a clean, responsive design. Highlights include front-end development with React, back-end integration with Node.js, and data management with MongoDB. Demonstrates expertise in full-stack development and the ability to build dynamic web applications",
       image: "/images/portfolio.png",
       technologies : ["Node Js", "Express Js", "React Js", "Mongo db"],
-      link: "https://github.com/alisha-tamboli/Portfolio.git",
+      link: "https://github.com/alisha-tamboli/MyPortfolio.git",
     },
     {
       id: 3,

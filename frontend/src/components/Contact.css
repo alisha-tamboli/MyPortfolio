@@ -58,7 +58,7 @@
   .form-field input:focus,
   .form-field textarea:focus {
     outline: none;
-    border-color: #007bff;
+    /* border-color: #007bff; */
   }
   
   .form-field textarea {

@@ -24,17 +24,19 @@ const Contact = () => {
     if (file) formDataToSend.append('file', file); // Add file if selected
 
     try {
-      const response = await axios.post('http://localhost:8000/api/contact', formDataToSend, {
+      const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
+
+      const response = await axios.post(`${backendUrl}/api/contact`, formDataToSend, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       setSuccess(true);
-      // Reset the form fields after successful submission
       setFormData({ name: '', email: '', message: '' });
       setFile(null);
       console.log(response.data); // Optional: Log the response for debugging
     } catch (error) {
-      console.error('Error sending message:', error);
+      console.error('Error sending message:', error.response || error);
     }
+    
   };
 
   return (
@@ -94,6 +96,7 @@ const Contact = () => {
         />
         <button
           type="submit"
+          className="submit-button"
           style={{ backgroundColor: '#f39c12', border: 'none', padding: '10px' }}
           onMouseOver={(e) => {
             e.target.style.backgroundColor = '#c27b08';

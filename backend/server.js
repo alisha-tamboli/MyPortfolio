@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+require('dotenv').config();
 const mongoose = require('mongoose');
 const messageRoutes = require('./routes/messageRoutes');
 
@@ -15,9 +16,22 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB setup
-mongoose.connect('mongodb://localhost:27017/Portfolio_db')
-.then(() => console.log('Connected to MongoDB'))
-.catch((err) => console.error('Connection failed', err));
+// mongoose.connect('mongodb://localhost:27017/Portfolio_db')
+const mongoURI = process.env.MONGODB_URI;
+
+if (!mongoURI) {
+    console.error("MongoDB URI is not defined. Please check your .env file.");
+    process.exit(1);  // Stop the server if the URI is missing
+}
+
+mongoose.connect(mongoURI)
+  .then(() => {
+      console.log("Connected to MongoDB successfully");
+  })
+  .catch((err) => {
+      console.error("Error connecting to MongoDB:", err);
+  });
+
 
 
 const contactSchema = new mongoose.Schema({
