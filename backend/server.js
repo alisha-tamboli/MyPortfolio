@@ -16,7 +16,6 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB setup
-// mongoose.connect('mongodb://localhost:27017/Portfolio_db')
 const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/Portfolio_db';
 
 if (!mongoURI) {
