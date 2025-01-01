@@ -21,23 +21,33 @@ const Contact = () => {
     formDataToSend.append('name', formData.name);
     formDataToSend.append('email', formData.email);
     formDataToSend.append('message', formData.message);
+
     if (file) formDataToSend.append('file', file); // Add file if selected
 
     try {
       const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
-
       const response = await axios.post(`${backendUrl}/api/contact`, formDataToSend, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
-      setSuccess(true);
+      if (response.status === 200 ) {
+        setSuccess(true);
+      }
+     
       setFormData({ name: '', email: '', message: '' });
       setFile(null);
-      console.log(response.data); // Optional: Log the response for debugging
-    } catch (error) {
-      console.error('Error sending message:', error.response || error);
-    }
-    
+
+      console.log(response.data);
+      
+      } catch (error) {
+        console.error('Error sending message:', error.response || error);
+      }
   };
+
+    const handleAlert = () => {
+      if (success) {
+        alert("Thank you for Contacting me!");  // Trigger the alert only after form is successfully submitted
+      }
+    };
 
   return (
     <div style={{ padding: '20px', backgroundColor: '#f8f9fa', color: '#000' }}>
@@ -96,7 +106,7 @@ const Contact = () => {
         />
         <button
           type="submit"
-          className="submit-button"
+          onClick={handleAlert}
           style={{ backgroundColor: '#f39c12', border: 'none', padding: '10px' }}
           onMouseOver={(e) => {
             e.target.style.backgroundColor = '#c27b08';
@@ -110,7 +120,7 @@ const Contact = () => {
           Submit
         </button>
       </form>
-      {success && <p>Thank you for contacting me!</p>}
+          {/* {success && <p>Thank you for contacting me!</p>} */}
     </div>
   );
 };
