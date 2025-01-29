@@ -60,7 +60,7 @@ const MainSection = () => {
 
       {/* Avatar Container */}
       <div className="avatar-container">
-        <img src="/images/portfolio3.png" alt="Avatar" className="avatar" />
+        <img src="/images/Avtar.png" alt="Avatar" className="avatar" />
       </div>
     </div>
   );
