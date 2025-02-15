@@ -26,8 +26,6 @@ const Contact = () => {
 
     try {
       const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
-      setFormData({ name: '', email: '', message: '' });
-      setFile(null)
       const response = await axios.post(`${backendUrl}/api/contact`, formDataToSend, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
