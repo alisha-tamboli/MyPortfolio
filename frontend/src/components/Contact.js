@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import './Contact.css';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify'; // import
+import 'react-toastify/dist/ReactToastify.css'; //  import styles
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [file, setFile] = useState(null); // File state
-  const [success, setSuccess] = useState(false);
+  const [success, setSuccess] = useState(false); 
+
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -21,35 +24,26 @@ const Contact = () => {
     formDataToSend.append('name', formData.name);
     formDataToSend.append('email', formData.email);
     formDataToSend.append('message', formData.message);
-
-    if (file) formDataToSend.append('file', file); // Add file if selected
+    if (file) formDataToSend.append('file', file);
 
     try {
       const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
       setFormData({ name: '', email: '', message: '' });
       setFile(null)
-      const response = await axios.post(`${backendUrl}/api/contact`, formDataToSend, {
-        headers: { 'Content-Type': 'multipart/form-data' },
-      });
-      if (response.status === 200 ) {
+      const response = await axios.post(`${backendUrl}/api/contact`, formDataToSend);
+  
+      if (response.status === 200 || response.status === 201) {
         setSuccess(true);
+        toast.success('Thank you for contacting me!');
+        setFormData({ name: '', email: '', message: '' });
+        setFile(null);
       }
-     
-      setFormData({ name: '', email: '', message: '' });
-      setFile(null);
-
-      console.log(response.data);
       
       } catch (error) {
         console.error('Error sending message:', error.response || error);
+        toast.error('Something went wrong. Please try again!');
       }
   };
-
-    const handleAlert = () => {
-      if (success) {
-        alert("Thank you for Contacting me!");  // Trigger the alert only after form is successfully submitted
-      }
-    };
 
   return (
     <div style={{ padding: '20px', backgroundColor: '#f8f9fa', color: '#000' }}>
@@ -95,6 +89,7 @@ const Contact = () => {
         <label>Upload File (Optional)</label>
         <input
           type="file"
+          name="file"
           onChange={handleFileChange}
           style={{
             display: 'block',
@@ -108,7 +103,6 @@ const Contact = () => {
         />
         <button
           type="submit"
-          onClick={handleAlert}
           style={{ backgroundColor: '#f39c12', border: 'none', padding: '10px' }}
           onMouseOver={(e) => {
             e.target.style.backgroundColor = '#c27b08';
@@ -122,7 +116,7 @@ const Contact = () => {
           Submit
         </button>
       </form>
-          {/* {success && <p>Thank you for contacting me!</p>} */}
+      <ToastContainer position="top-center" autoClose={3000} />
     </div>
   );
 };
