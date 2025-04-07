@@ -5,7 +5,7 @@ const Projects = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/projects')
+    axios.get('http://localhost:5000/api/projects')   //backend server runnign on PORT 5000
       .then(response => setProjects(response.data))
       .catch(error => console.error("Error fetching projects:", error));
   }, []);

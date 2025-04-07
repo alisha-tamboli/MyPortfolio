@@ -50,7 +50,7 @@ MyPortfolio - MERN Stack Website
     Backend:-  node server.js
     frontend:-  npm start
 
-    Server running on:  http://localhost:8000
+    Server running on:  http://localhost:5000
     You can now view frontend in the browser and visit: http://localhost:3000
 
 
