@@ -28,8 +28,13 @@ const Contact = () => {
 
     try {
       const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
+<<<<<<< HEAD
       // setFormData({ name: '', email: '', message: '' });
       // setFile(null)
+=======
+      setFormData({ name: '', email: '', message: '' });
+      setFile(null)
+>>>>>>> a8f1492366c0a3f4ad6c664929bb8afa6f43fc8b
       const response = await axios.post(`${backendUrl}/api/contact`, formDataToSend);
   
       if (response.status === 200 || response.status === 201) {
